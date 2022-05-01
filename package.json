@@ -14,7 +14,6 @@
     "@prismicio/helpers": "^2.3.0",
     "@prismicio/next": "^0.1.2",
     "@prismicio/react": "^2.3.0",
-    "@prismicio/slice-simulator-react": "^0.2.2",
     "next": "12.1.5",
     "react": "18.1.0",
     "react-dom": "18.1.0"
