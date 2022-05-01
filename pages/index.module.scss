@@ -1,0 +1,32 @@
+
+.blog_title {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.list {
+  width: 800px;
+  margin: 0 auto;
+
+  .item {
+
+    padding: 8px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+
+    .image {
+      height: 100px;
+      width: 100px;
+    }
+    .title {
+      font-size: larger;
+      padding: 8px
+    }
+
+    &:hover {
+      background-color: rgb(226, 226, 226);
+    }
+  }
+}

@@ -1,0 +1,18 @@
+
+
+.container {
+  margin: 0 auto;
+
+  max-width: 800px;
+
+  .title {
+    font-size: larger;
+  }
+
+  article {
+
+    img {
+      max-height: 300px;
+    }
+  }
+}
