@@ -9,6 +9,7 @@ class MyDocument extends Document {
           {process.env.GOOGLE_ANALYTICS_TAG_ID && (
             <GoogleAnalytics tagId={process.env.GOOGLE_ANALYTICS_TAG_ID}/>
           )}
+          <link rel="icon" type="image/png" href="/logo.png"/>
         </Head>
         <body>
           <Main />

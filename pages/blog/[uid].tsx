@@ -26,17 +26,24 @@ export const getServerSideProps: GetServerSideProps = async function(context) {
 }
 
 const BlogPage: NextPage<Props> = ({ doc }) => {
-  const { tags } = doc;
+  const { tags, data, uid, first_publication_date } = doc;
+  const { title, header_image, content } = data
   return (
     <>
       <Head>
-        <title>{doc.data.title}</title>
-        <meta title={doc.data.title} />
+        <title>{title}</title>
+        <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#" />
+        <meta property="og:title" content={title} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://tengenji.dev/blog/${uid}`} />
+        <meta property="og:image" content={header_image.url} />
+        <meta property="og:site_name" content="Tengenji Tech Blog" />
+        <meta property="og:description" content="Blog posts about technologies" />
       </Head>
       <TopBar />
       <div className={style.header}>
         <div className={style.image} >
-          <Image src={doc.data.header_image.url}
+          <Image src={header_image.url}
             alt="header_image"
             layout="fill"
             objectFit="cover"
@@ -44,8 +51,8 @@ const BlogPage: NextPage<Props> = ({ doc }) => {
         </div>
       </div>
       <div className={style.container}>
-        <div className={style.postedAt}>{dateFormat(doc.first_publication_date, "mmmm dS yyyy")}</div>
-        <div className={style.title}>{doc.data.title}</div>
+        <div className={style.postedAt}>{dateFormat(first_publication_date, "mmmm dS yyyy")}</div>
+        <div className={style.title}>{title}</div>
         {tags.length > 0 && (
           <div>
             {tags.map((tag) => (
@@ -54,7 +61,7 @@ const BlogPage: NextPage<Props> = ({ doc }) => {
           </div>
         )}
         <article>
-          <PrismicRichText field={doc.data.content} />
+          <PrismicRichText field={content} />
         </article>
       </div>
     </>
