@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { client } from '../../prismicio';
 import style from './[uid].module.scss';
 import dateFormat from 'dateformat';
+import { TopBar } from "../../components/TopBar";
 
 
 type Props = {
@@ -32,6 +33,7 @@ const BlogPage: NextPage<Props> = ({ doc }) => {
         <title>{doc.data.title}</title>
         <meta title={doc.data.title} />
       </Head>
+      <TopBar />
       <div className={style.header}>
         <div className={style.image} >
           <Image src={doc.data.header_image.url}
