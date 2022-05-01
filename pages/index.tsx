@@ -24,6 +24,13 @@ const Home: NextPage<Props> = ({ query }) => {
     <>
       <Head>
         <title>Tengenji Tech Blog</title>
+        <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#" />
+        <meta property="og:title" content="Tengenji Tech Blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://tengenji.dev/" />
+        <meta property="og:image" content={query.results[0].data.header_image.url} />
+        <meta property="og:site_name" content="Tengenji Tech Blog" />
+        <meta property="og:description" content="Blog posts about technologies" />
       </Head>
       <TopBar />
       <div className={style.list}>
