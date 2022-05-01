@@ -29,9 +29,9 @@ const Home: NextPage<Props> = ({ query }) => {
             <Link href={`/blog/${doc.uid}`} key={doc.uid} passHref>
               <div className={style.item}>
                 <Image className={style.image} src={doc.data.header_image.url} alt="thumbnail" width={100} height={100}/>
-                <div className={style.title}>
-                  <div>{doc.data.title}</div>
-                  <div>{dateformat(doc.first_publication_date, "mmmm dS yyyy")}</div>
+                <div className={style.text}>
+                  <div className={style.title}>{doc.data.title}</div>
+                  <div className={style.date}>{dateformat(doc.first_publication_date, "mmmm dS yyyy")}</div>
                 </div>
               </div>
             </Link>

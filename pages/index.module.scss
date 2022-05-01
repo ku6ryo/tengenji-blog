@@ -20,9 +20,15 @@
       height: 100px;
       width: 100px;
     }
-    .title {
-      font-size: larger;
-      padding: 8px
+    .text {
+      padding: 8px;
+
+      .title {
+        font-size: 24px;
+      }
+      .date {
+        font-size: 12px;
+      }
     }
 
     &:hover {
