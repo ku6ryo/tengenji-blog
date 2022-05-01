@@ -28,12 +28,17 @@
   .tag {
     background: #ff5070;
     border-radius: 4px;
+    cursor: pointer;
     display: inline-block;
     font-family: Noto Sans, Arial, sans-serif;
     font-weight: bold;
     font-size: 12px;
     margin-right: 8px;
     padding: 6px 8px;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   .postedAt {

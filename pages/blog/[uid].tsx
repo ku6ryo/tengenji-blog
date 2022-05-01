@@ -1,4 +1,3 @@
-import { Client } from '@prismicio/client';
 import { PrismicRichText } from '@prismicio/react';
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head';
@@ -7,10 +6,11 @@ import { client } from '../../prismicio';
 import style from './[uid].module.scss';
 import dateFormat from 'dateformat';
 import { TopBar } from "../../components/TopBar";
-
+import { PrismicDocument } from '@prismicio/types';
+import Link from "next/link"
 
 type Props = {
-  doc: Awaited<ReturnType<Client['getByUID']>>;
+  doc: PrismicDocument;
 }
 
 export const getServerSideProps: GetServerSideProps = async function(context) {
@@ -56,7 +56,9 @@ const BlogPage: NextPage<Props> = ({ doc }) => {
         {tags.length > 0 && (
           <div>
             {tags.map((tag) => (
-              <div className={style.tag} key={tag}>{"#" + tag}</div>
+              <Link key={tag} href={`/tag/${tag}`} passHref>
+                <div className={style.tag}>{"#" + tag}</div>
+              </Link>
             ))}
           </div>
         )}

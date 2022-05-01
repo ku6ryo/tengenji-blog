@@ -1,16 +1,23 @@
 import type { NextPage, GetServerSideProps } from 'next'
 import Head from 'next/head'
-import { client } from '../prismicio';
-import { TopBar } from '../components/TopBar';
-import { ArticleList } from '../components/ArticleList';
-import { PrismicDocument } from '@prismicio/types';
+import { client } from '../../prismicio';
+import { TopBar } from '../../components/TopBar';
+import { ArticleList } from '../../components/ArticleList';
+import { PrismicDocument } from "@prismicio/types"
 
 type Props = {
   docs: PrismicDocument[]
 }
 
 export const getServerSideProps: GetServerSideProps = async function(context) {
-  const query = await client.getByType("blog")
+  const { tag } = context.query 
+  if (!tag) {
+    throw new Error('No tag provided');
+  }
+  if (Array.isArray(tag)) {
+    throw new Error('Multiple tags provided');
+  }
+  const query = await client.getByTag(tag)
   return { props: { docs: query.results } };
 }
 
