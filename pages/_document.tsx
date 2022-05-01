@@ -6,10 +6,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
-            rel="stylesheet"
-          />
           {process.env.GOOGLE_ANALYTICS_TAG_ID && (
             <GoogleAnalytics tagId={process.env.GOOGLE_ANALYTICS_TAG_ID}/>
           )}

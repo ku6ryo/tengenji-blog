@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Noto Serif";
+  src: url(/NotoSerif-Regular.ttf);
+}
+@font-face {
+  font-family: "Noto Serif";
+  src: url(/NotoSerif-Bold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Noto Serif";
+  src: url(/NotoSerif-BoldItalic.ttf);
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Noto Serif";
+  src: url(/NotoSerif-Italic.ttf);
+  font-style: italic;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url(/NotoSans-Regular.ttf);
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url(/NotoSans-Bold.ttf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Russo One";
+  src: url(/RussoOne-Regular.ttf);
+}

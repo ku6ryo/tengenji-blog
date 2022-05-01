@@ -1,18 +1,65 @@
 
+.header {
+  margin-bottom: 40px;
+
+  .image {
+    height: 300px;
+    position: relative;
+    width: 100%;
+  }
+}
 
 .container {
-  margin: 0 auto;
-
+  color: #222;
+  font-family: Noto Serif, serif;
+  margin: 0 auto 80px;
   max-width: 800px;
+  padding: 0 20px;
 
   .title {
-    font-size: larger;
+    color: #222;
+    font-size: 48px;
+    font-family: Russo One, sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.03em;
   }
 
   article {
+    p {
+      line-height: 1.7;
+      font-size: 16px;
+      margin: 12px 0;
+      text-align: justify;
+    }
+
+    li {
+      margin: 12px 0;
+    }
 
     img {
       max-height: 300px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-family: Noto Sans, Arial, sans-serif;
+      font-weight: bold;
+      margin: 36px 0 20px;
+    }
+
+    h2 {
+      color: #333;
+      font-size: 20px;
+      font-family: Noto Sans, Arial, sans-serif;
+      font-weight: bold;
+      margin: 28px 0 12px;
+    }
+
+    h3 {
+      color: #555;
+      font-size: 18px;
+      font-family: Noto Sans, Arial, sans-serif;
+      font-weight: bold;
     }
   }
 }

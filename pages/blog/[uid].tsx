@@ -2,13 +2,14 @@ import { Client } from '@prismicio/client';
 import { PrismicRichText } from '@prismicio/react';
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head';
+import Image from 'next/image';
 import { client } from '../../prismicio';
 import style from './[uid].module.scss';
 
 
 
 type Props = {
-  page: Awaited<ReturnType<Client['getByUID']>>;
+  doc: Awaited<ReturnType<Client['getByUID']>>;
 }
 
 export const getServerSideProps: GetServerSideProps = async function(context) {
@@ -19,21 +20,29 @@ export const getServerSideProps: GetServerSideProps = async function(context) {
   if (Array.isArray(uid)) {
     throw new Error('Multiple uids provided');
   }
-  const page = await client.getByUID("blog", uid)
-  return { props: { page } };
+  const doc = await client.getByUID("blog", uid)
+  return { props: { doc } };
 }
 
-const BlogPage: NextPage<Props> = ({ page }) => {
-  console.log(page.data)
+const BlogPage: NextPage<Props> = ({ doc }) => {
   return (
     <>
       <Head>
-        <meta title={page.data.title} />
+        <meta title={doc.data.title} />
       </Head>
+      <div className={style.header}>
+        <div className={style.image} >
+          <Image src={doc.data.header_image.url}
+            alt="header_image"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
+      </div>
       <div className={style.container}>
-        <div className={style.title}>{page.data.title}</div>
+        <div className={style.title}>{doc.data.title}</div>
         <article>
-          <PrismicRichText field={page.data.content} />
+          <PrismicRichText field={doc.data.content} />
         </article>
       </div>
     </>
