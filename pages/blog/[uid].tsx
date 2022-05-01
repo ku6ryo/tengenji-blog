@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { client } from '../../prismicio';
 import style from './[uid].module.scss';
-
+import dateFormat from 'dateformat';
 
 
 type Props = {
@@ -25,9 +25,11 @@ export const getServerSideProps: GetServerSideProps = async function(context) {
 }
 
 const BlogPage: NextPage<Props> = ({ doc }) => {
+  const { tags } = doc;
   return (
     <>
       <Head>
+        <title>{doc.data.title}</title>
         <meta title={doc.data.title} />
       </Head>
       <div className={style.header}>
@@ -40,7 +42,15 @@ const BlogPage: NextPage<Props> = ({ doc }) => {
         </div>
       </div>
       <div className={style.container}>
+        <div className={style.postedAt}>{dateFormat(doc.first_publication_date, "mmmm dS yyyy")}</div>
         <div className={style.title}>{doc.data.title}</div>
+        {tags.length > 0 && (
+          <div>
+            {tags.map((tag) => (
+              <div className={style.tag}>{"#" + tag}</div>
+            ))}
+          </div>
+        )}
         <article>
           <PrismicRichText field={doc.data.content} />
         </article>

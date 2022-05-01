@@ -24,6 +24,22 @@
     letter-spacing: 0.03em;
   }
 
+  .tag {
+    background: #ff5070;
+    border-radius: 4px;
+    display: inline-block;
+    font-family: Noto Sans, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    margin-right: 8px;
+    padding: 6px 8px;
+  }
+
+  .postedAt {
+    font-family: Noto Sans, Arial, sans-serif;
+    margin: 8px 0;
+  }
+
   article {
     p {
       line-height: 1.7;
@@ -44,7 +60,7 @@
       font-size: 28px;
       font-family: Noto Sans, Arial, sans-serif;
       font-weight: bold;
-      margin: 36px 0 20px;
+      margin: 36px 0 16px;
     }
 
     h2 {
