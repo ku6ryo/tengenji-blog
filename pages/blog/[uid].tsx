@@ -49,7 +49,7 @@ const BlogPage: NextPage<Props> = ({ doc }) => {
         {tags.length > 0 && (
           <div>
             {tags.map((tag) => (
-              <div className={style.tag}>{"#" + tag}</div>
+              <div className={style.tag} key={tag}>{"#" + tag}</div>
             ))}
           </div>
         )}
