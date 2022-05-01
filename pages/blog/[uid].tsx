@@ -27,7 +27,8 @@ export const getServerSideProps: GetServerSideProps = async function(context) {
 
 const BlogPage: NextPage<Props> = ({ doc }) => {
   const { tags, data, uid, first_publication_date } = doc;
-  const { title, header_image, content } = data
+  const { title, header_image, content } = data;
+
   return (
     <>
       <Head>

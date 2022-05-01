@@ -9,6 +9,7 @@ type Props = {
 }
 
 export function ArticleList ({ docs }: Props) {
+
   return (
     <div className={style.list}>
       {docs.map((doc) => {
