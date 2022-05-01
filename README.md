@@ -1,1 +1,1 @@
-This is my personal blog server.
+This is my personal blog server. Next.js + Prismic.io
