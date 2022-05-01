@@ -27,7 +27,7 @@ const Home: NextPage<Props> = ({ query }) => {
           return (
             <Link href={`/blog/${doc.uid}`} key={doc.uid} passHref>
               <div className={style.item}>
-                <Image className={style.image} src={doc.data.header_image.url} alt="thumbnail"/>
+                <Image className={style.image} src={doc.data.header_image.url} alt="thumbnail" width={100} height={100}/>
                 <div className={style.title}>{doc.data.title}</div>
               </div>
             </Link>
